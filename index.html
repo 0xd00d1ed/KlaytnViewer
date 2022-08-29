@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-73ZRTZ85GW"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-73ZRTZ85GW");
+    </script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KlaytnViewer</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/caver-js/1.9.0/caver.min.js"
+      integrity="sha512-yJ6TIBSlnl6d/iMa5aod0/u5ltbImDVu604KQK8pAqTI9g5Yt2fA1uQ1K92/LGZbVa9/jsWEdntxtTLTfDFUYQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="site.css" />
+    <script src="com.js"></script>
+    <script src="site.js"></script>
+    <script type="module">
+      import preset from "./preset.mjs";
+      presetList = preset;
+      presetDraw();
+    </script>
+  </head>
+
+  <body>
+    <div class="bg-modal">
+      <div class="modalwindow">
+        <div class="modal-header colgrid-fit-auto">
+          <div style="margin: auto 20px">프리셋 불러오기</div>
+          <input
+            class="xbutton"
+            type="button"
+            onclick="toggleModal()"
+            value="X"
+          />
+        </div>
+        <div class="hline"></div>
+        <div class="modal-content"></div>
+        <template id="preset-row">
+          <div>
+            <div class="category-name"></div>
+            <div class="contract-content"></div>
+          </div>
+        </template>
+        <template id="contract-row">
+          <div class="contract-row">
+            <div class="contract-title"></div>
+            <div class="contract-description"></div>
+            <button class="preset-load">불러오기</button>
+          </div>
+        </template>
+      </div>
+    </div>
+    <div class="grid-layout">
+      <div class="grid-menu">
+        <div class="rowgrid-auto-auto">
+          <div>클레이튼 RPC 주소</div>
+          <div class="colgrid-fit-auto">
+            <textarea
+              id="rpcAddr"
+              class="textbox1"
+              rows="1"
+              oninput="rpcAddrInput(event)"
+            ></textarea>
+            <input
+              type="button"
+              class="button1"
+              onclick="setRpcClick()"
+              value="변경"
+            />
+          </div>
+        </div>
+        <div class="hline"></div>
+        <div>
+          <input
+            type="button"
+            class="button1"
+            style="font-size: larger"
+            onclick="toggleModal()"
+            value="프리셋 불러오기"
+          />
+        </div>
+        <div class="rowgrid-auto-auto">
+          <div>컨트랙트 주소</div>
+          <div>
+            <input
+              type="text"
+              class="textbox1"
+              id="address"
+              style="width: 100%"
+            />
+          </div>
+        </div>
+        <div class="rowgrid-auto-fit">
+          <div>컨트랙트 ABI</div>
+          <div>
+            <textarea id="abi" class="textbox1" style="height: 100%"></textarea>
+          </div>
+        </div>
+        <div>
+          <input
+            type="button"
+            class="button1"
+            style="font-size: larger"
+            value="컨트랙트 정보 호출"
+            onclick="setContractClick()"
+          />
+        </div>
+      </div>
+      <div class="vline"></div>
+      <div id="view" class="grid-view" style="border: 0px">
+        <div id="error" class="error"></div>
+        <div style="overflow-y: scroll; height: 100%">
+          <div id="contract-table"></div>
+          <template id="method-top-row">
+            <div class="colgrid-fit-auto content">
+              <div class="method-name"></div>
+              <button class="method-retrieve">조회</button>
+            </div>
+            <div class="hline-thin"></div>
+          </template>
+          <template id="method-body-row">
+            <div class="input-name content"></div>
+            <div class="content">
+              <input
+                type="text"
+                class="input-text textbox1"
+                style="width: 100%"
+              />
+            </div>
+          </template>
+          <template id="method-bottom-row">
+            <div class="result-text content" style="word-wrap: break-word">
+              결과
+            </div>
+          </template>
+        </div>
+        <div style="padding: 0px; background-color: #333">
+          <div class="hline"></div>
+          <div style="margin: 10px">
+            <ul style="list-style: none; margin: 0; padding: 0">
+              <li>
+                Github:
+                <a
+                  style="color: white"
+                  href="https://github.com/0xd00d1ed/klaytnview/"
+                  >https://github.com/0xd00d1ed/KlaytnViewer/</a
+                >
+              </li>
+              <li>
+                커피사주기: 0xaE81fd9A56258a01cB74bf484a6055397Eba6896(KLAYTN)
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
