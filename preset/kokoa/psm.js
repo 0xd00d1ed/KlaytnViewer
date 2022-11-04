@@ -678,10 +678,11 @@ const obj = {
     }, {
         "inputs": [{
             "internalType": "uint256",
-            "name": "i",
+            "name": "스테이블코인 번호",
             "type": "uint256"
         }],
         "name": "token",
+        "desc": "PSM 스테이블코인 주소",
         "outputs": [{
             "internalType": "address",
             "name": "",
@@ -695,7 +696,7 @@ const obj = {
             "name": "",
             "type": "address"
         }],
-        "desc": "PSM 유보 스테이블코인 잔고",
+        "desc": "PSM 스테이블코인 잔고",
         "name": "tokenBalance",
         "outputs": [{
             "internalType": "uint256",
@@ -707,6 +708,7 @@ const obj = {
     }, {
         "inputs": [],
         "name": "tokenLength",
+        "desc": "PSM 스테이블코인 리스트 길이",
         "outputs": [{
             "internalType": "uint256",
             "name": "",
@@ -717,7 +719,6 @@ const obj = {
     }, {
         "inputs": [],
         "name": "tokenList",
-        "desc": "PSM 유보 스테이블코인 토큰주소 리스트",
         "outputs": [{
             "internalType": "address[]",
             "name": "",
