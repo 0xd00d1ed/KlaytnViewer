@@ -1,7 +1,7 @@
 const obj = {
     title: 'PSM',
     description: '코코아 파이낸스 PSM',
-    address: '',
+    address: '0xC9880f5809964924373b65a3f77e64cB0fb583C4',
     abi: `[{
         "anonymous": false,
         "inputs": [{
