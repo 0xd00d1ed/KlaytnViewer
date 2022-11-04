@@ -30,7 +30,13 @@ import sigma_govern from "./preset/sigma/govern.js";
 sigma.contract.push(sigma_vote);
 sigma.contract.push(sigma_govern);
 
+const kokoa = clone(template);
+kokoa.category = "코코아 파이낸스";
+import psm from "./preset/kokoa/psm.js";
+kokoa.contract.push(psm);
+
 list.push(standard);
 list.push(klayswap);
 list.push(sigma);
+list.push(kokoa);
 export default list;
